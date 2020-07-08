@@ -1,9 +1,9 @@
 import React from "react";
 
-const LastName = () => {
+const LastName = ({onChange}) => {
   return (
     <>
-      <input className="lname_input" type="text" />
+      <input onChange={onChange} className="lname_input" type="text" />
     </>
   );
 };

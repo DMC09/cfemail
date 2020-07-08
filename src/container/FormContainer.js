@@ -4,8 +4,9 @@ import {FormContext} from '../context/formContext';
 import NameContainer from './NameContainer';
 
 const FromContainer = () => {
-  const [fname, setFname] = useContext(FormContext);
+  const [fname, setFname,lname,setLname] = useContext(FormContext);
   console.log(fname)
+  console.log(lname)
 
   return (
     <div className="form-container" >
