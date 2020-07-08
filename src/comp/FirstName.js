@@ -1,13 +1,17 @@
-import React from 'react'
+import React from "react";
 
-const FirstName = ({onChange}) => {
-  // console.log(onChange)
+const FirstName = ({ onChange }) => {
   return (
-  <>
-  <input onChange={onChange} className="fname_input" type="text" />
-</>
+    <>
+      <label htmlFor="">First Name</label>
+      <input
+        onChange={onChange}
+        className="fname_input"
+        type="text"
+        placeholder="John"
+       />
+    </>
+  );
+};
 
-  )
-}
-
-export default FirstName
+export default FirstName;

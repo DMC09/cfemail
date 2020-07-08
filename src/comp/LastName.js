@@ -3,7 +3,13 @@ import React from "react";
 const LastName = ({onChange}) => {
   return (
     <>
-      <input onChange={onChange} className="lname_input" type="text" />
+    <label htmlFor="">Last Name</label>
+      <input
+      onChange={onChange}
+      className="lname_input"
+      type="text"
+      placeholder="Doe"
+       />
     </>
   );
 };
