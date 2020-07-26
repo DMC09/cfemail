@@ -1,17 +1,31 @@
-
-import React, { useContext } from "react";
-import {FormContext} from '../context/formContext';
-import NameContainer from './NameContainer';
+import React, { useContext, useState } from "react";
+import { FormContext } from "../context/formContext";
+import InitialForm from "./InitialForm";
+import MainForm from "./MainForm";
 
 const FromContainer = () => {
-  const [fname, setFname,lname,setLname] = useContext(FormContext);
+  const [
+    fname,
+    setFname,
+    lname,
+    setLname,
+    completedInit,
+    setComplete,
+  ] = useContext(FormContext);
+  console.log(completedInit);
 
+  if(completedInit){
+    return (
 
+      <MainForm/>
+
+    )
+  }
   return (
-    <div className="form-container" >
-      <NameContainer />
-    </div>
-  )
-}
 
-export default FromContainer
+    <InitialForm/>
+
+  );
+};
+
+export default FromContainer;
