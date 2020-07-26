@@ -1,12 +1,12 @@
 import React from "react";
-import FormContainer from "./container/FormContainer";
+import MainContainer from "./container/MainContainer";
 import { FormProvider } from "./context/formContext";
 
 function App() {
   return (
     <FormProvider>
       <>
-        <FormContainer />
+        <MainContainer />
       </>
     </FormProvider>
   );
