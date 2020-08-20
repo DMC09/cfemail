@@ -1,3 +1,10 @@
 @import "./stylesheets/utility.css";
 @import "./stylesheets/generic.css";
 /* Main styles  */
+
+
+.initial_form_container{
+
+  border-radius: 20px;
+
+}

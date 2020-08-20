@@ -28,10 +28,10 @@ export default function InitialForm() {
       : e.target.nextSibling.classList.add("active");
   };
   return (
-    <div class="row">
+    <div class="row  z-depth-5 initial_form_container">
       <form onSubmit={handleSubmit(onSubmit)} class="col s12">
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col m6 s12">
             <input
               onChange={(e) => handleChange(e)}
               id="first_name"
@@ -61,7 +61,7 @@ export default function InitialForm() {
               </span>
             )}
           </div>
-          <div class="input-field col s6">
+          <div class="input-field col m6 s12">
             <input
               onChange={(e) => handleChange(e)}
               id="last_name"
@@ -92,7 +92,6 @@ export default function InitialForm() {
             )}
           </div>
         </div>
-
         <div class="row">
           <div class="col s12">
             <div class="input-field col s12">
@@ -138,7 +137,7 @@ export default function InitialForm() {
             </div>
           </div>
           <button
-            class="btn waves-effect waves-light"
+            class="btn waves-effect waves-light col s4 offset-s4 "
             type="submit"
             name="action"
           >
@@ -148,72 +147,6 @@ export default function InitialForm() {
         </div>
       </form>
     </div>
-    // <div className="row">
-    //   <form className="col s12" onSubmit={handleSubmit(onSubmit)}>
-    //     <div className="row">
-    //       <div className="input-field col s6">
-    //         <input
-    //           name="firstName"
-    //           placeholder="First Name"
-    //           ref={register({
-    //             required: true,
-    //             minLength: 1,
-    //             pattern: /^[a-zA-z]+$/,
-    //           })}
-    //         />
-    //         {errors.firstName?.type === "required" && (
-    //         <span class="helper-text" data-error="wrong" data-success="right">Your input is required</span>
-    //         )}
-    //         {errors.firstName?.type === "minLength" && (
-    //           <span class="helper-text" data-error="wrong" data-success="right">Your input needs to be at least 1 letter</span>
-    //
-    //         )}
-    //         {errors.firstName?.type === "pattern" && (
-    //           <span class="helper-text" data-error="wrong" data-success="right">please only use letters</span>
-    //         )}
-    //       </div>
-    //     </div>
-    //
-    //     <label>Last Name</label>
-    //     <input
-    //       name="lastName"
-    //       placeholder="Last Name"
-    //       ref={register({
-    //         required: true,
-    //         minLength: 1,
-    //         pattern: /^[a-zA-z]+$/,
-    //       })}
-    //     />
-    //
-    //     {errors.lastName?.type === "required" && (
-    //       <p className="error">Your input is required</p>
-    //     )}
-    //     {errors.lastName?.type === "minLength" && (
-    //       <p className="error">Your input needs to be at least 1 letter</p>
-    //     )}
-    //     {errors.lastName?.type === "pattern" && (
-    //       <p className="error">please only use letters</p>
-    //     )}
-    //     <label>Email</label>
-    //     <input
-    //       name="email"
-    //       ref={register({
-    //         required: true,
-    //         minLength: 1,
-    //         pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    //       })}
-    //     />
-    //     {errors.email?.type === "required" && (
-    //       <p className="error">Your input is required</p>
-    //     )}
-    //     {errors.email?.type === "minLength" && (
-    //       <p className="error">Your input needs to be at least 1 letter</p>
-    //     )}
-    //     {errors.email?.type === "pattern" && (
-    //       <p className="error">please use a valid email address</p>
-    //     )}
-    //     <button type="submit"> Submit</button>
-    //   </form>
-    // </div>
+
   );
 }
