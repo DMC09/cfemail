@@ -2,9 +2,7 @@
 @import "./stylesheets/generic.css";
 /* Main styles  */
 
-
-.initial_form_container{
-
+.initial_form_container {
+  padding: 1rem;
   border-radius: 20px;
-
 }

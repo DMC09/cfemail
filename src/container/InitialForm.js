@@ -28,7 +28,7 @@ export default function InitialForm() {
       : e.target.nextSibling.classList.add("active");
   };
   return (
-    <div class="row  z-depth-5 initial_form_container">
+    <div class="container z-depth-5 initial_form_container">
       <form onSubmit={handleSubmit(onSubmit)} class="col s12">
         <div class="row">
           <div class="input-field col m6 s12">
