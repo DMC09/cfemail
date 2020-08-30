@@ -19,179 +19,58 @@ export default function MainForm() {
         </p>
         <form onSubmit={handleSubmit(onSubmit)} class="col s12">
           <div class="row">
-            <div class="input-field col m6 s12">
+            <div class="input-field col  s12">
               <input
-                id="category"
+                ref={register({ required: "This is required" })}
+                name="example_1"
+                value={true}
                 type="checkbox"
-                class="validate"
-                name="category"
-                ref={register({ required: true, max: 3, min: 1 })}
               ></input>
-              <label for="first_name">Category</label>
-              {errors.firstName?.type === "required" && (
-                <span
-                  class="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                >
-                  Your input is required
-                </span>
-              )}
-              {errors.firstName?.type === "minLength" && (
-                <span
-                  class="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                >
-                  Your input needs to be at least 1 letter
-                </span>
-              )}
-              {errors.firstName?.type === "pattern" && (
-                <span
-                  class="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                >
-                  please only use letters
-                </span>
-              )}
-            </div>
-            <div class="input-field col m6 s12">
+
               <input
-                id="last_name"
-                type="text"
-                class="validate"
-                name="lastName"
-                ref={register({
-                  required: true,
-                  minLength: 1,
-                  pattern: /^[a-zA-z]+$/,
-                })}
-              ></input>
-              <label for="last_name">Frequency</label>
-              {errors.lastName?.type === "required" && (
-                <span
-                  class="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                >
-                  Your input is required
-                </span>
-              )}
-              {errors.lastName?.type === "minLength" && (
-                <span
-                  class="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                >
-                  Your input needs to be at least 1 letter
-                </span>
-              )}
-              {errors.lastName?.type === "pattern" && (
-                <span
-                  class="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                >
-                  please only use letters
-                </span>
-              )}
-            </div>
-            <div class="input-field col m6 s12">
+                type="checkbox"
+                placeholder="Mobile number"
+                name="Mobile number"
+                ref={register({ required: true, maxLength: 12 })}
+              />
+              <select name="Title" ref={register({ required: true })}>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Dr">Dr</option>
+              </select>
+
               <input
-                id="last_name"
-                type="text"
-                class="validate"
-                name="lastName"
-                ref={register({
-                  required: true,
-                  minLength: 1,
-                  pattern: /^[a-zA-z]+$/,
-                })}
-              ></input>
-              <label for="last_name">Type</label>
-              {errors.lastName?.type === "required" && (
-                <span
-                  class="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                >
-                  Your input is required
-                </span>
-              )}
-              {errors.lastName?.type === "minLength" && (
-                <span
-                  class="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                >
-                  Your input needs to be at least 1 letter
-                </span>
-              )}
-              {errors.lastName?.type === "pattern" && (
-                <span
-                  class="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                >
-                  please only use letters
-                </span>
-              )}
+                name="Developer"
+                type="radio"
+                value="Yes"
+                ref={register({ required: true })}
+              />
+              <input
+                name="Developer"
+                type="radio"
+                value="No"
+                ref={register({ required: true })}
+              />
             </div>
-          </div>
-          <div class="row">
-            <div class="col s12">
-              <div class="input-field col s12">
-                <input
-                  id="email"
-                  type="email"
-                  class="validate"
-                  name="email"
-                  ref={register({
-                    required: true,
-                    pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                  })}
-                ></input>
-                <label for="email">test</label>
-                {errors.email?.type === "required" && (
-                  <span
-                    class="helper-text"
-                    data-error="wrong"
-                    data-success="right"
-                  >
-                    Your input is required
-                  </span>
-                )}
-                {errors.email?.type === "minLength" && (
-                  <span
-                    class="helper-text"
-                    data-error="wrong"
-                    data-success="right"
-                  >
-                    Your input needs to be at least 1 letter
-                  </span>
-                )}
-                {errors.email?.type === "pattern" && (
-                  <span
-                    class="helper-text"
-                    data-error="wrong"
-                    data-success="right"
-                  >
-                    Please enter a valid email address
-                  </span>
-                )}
-              </div>
-            </div>
-            <button
-              class="btn waves-effect waves-light col s4 offset-s4 "
-              type="submit"
-              name="action"
-            >
-              Confirm
-              <i class="material-icons right">send</i>
-            </button>
           </div>
         </form>
+        <form onSubmit={handleSubmit(onSubmit)}>
+      <input type="text" placeholder="First name" name="First name" ref={register({required: true, maxLength: 80})} />
+      <input type="text" placeholder="Email" name="Email" ref={register({required: true, pattern: /^\S+@\S+$/i})} />
+      <input type="checkbox" placeholder="Mobile number" name="Mobile number" ref={register({required: true, maxLength: 12})} />
+      <select name="Title" ref={register({ required: true })}>
+        <option value="Mr">Mr</option>
+        <option value="Mrs">Mrs</option>
+        <option value="Miss">Miss</option>
+        <option value="Dr">Dr</option>
+      </select>
+
+      <input name="Developer" type="radio" value="Yes" ref={register({ required: true })}/>
+      <input name="Developer" type="radio" value="No" ref={register({ required: true })}/>
+
+      <input type="submit" />
+    </form>
       </div>
     </>
   );

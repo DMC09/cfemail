@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FormContext } from "../context/formContext";
-import "materialize-css/dist/css/materialize.min.css";
 
 export default function InitialForm() {
   const [
@@ -28,10 +27,10 @@ export default function InitialForm() {
       : e.target.nextSibling.classList.add("active");
   };
   return (
-    <div class="container z-depth-5 initial_form_container">
-      <form onSubmit={handleSubmit(onSubmit)} class="col s12">
+    <div class="container">
+      <form onSubmit={handleSubmit(onSubmit)} class="">
         <div class="row">
-          <div class="input-field col m6 s12">
+          <div class="input-field ">
             <input
               onChange={(e) => handleChange(e)}
               id="first_name"
@@ -61,7 +60,7 @@ export default function InitialForm() {
               </span>
             )}
           </div>
-          <div class="input-field col m6 s12">
+          <div class="input-field ">
             <input
               onChange={(e) => handleChange(e)}
               id="last_name"
@@ -92,9 +91,24 @@ export default function InitialForm() {
             )}
           </div>
         </div>
+        <label for="email">balls</label>
+
+                  <input name="chexkbox" type="checkbox" value="balls" ref={register}/> hello
         <div class="row">
-          <div class="col s12">
-            <div class="input-field col s12">
+          <div class="input-field ">
+
+
+
+          </div>
+          <input name="hello; hello;bye" type="radio" value="one" ref={register}/> hello
+          <input name="hello; hello;bye" type="radio" value=" two" ref={register}/> helloe
+          <input name="hello; hello;bye" type="radio" value="three" ref={register}/> hello
+
+        </div>
+
+        <div class="row">
+          <div class="">
+            <div class="input-field ">
               <input
                 onChange={(e) => handleChange(e)}
                 id="email"
@@ -136,17 +150,11 @@ export default function InitialForm() {
               )}
             </div>
           </div>
-          <button
-            class="btn waves-effect waves-light col s4 offset-s4 "
-            type="submit"
-            name="action"
-          >
+          <button class=" " type="submit" name="action">
             Submit
-            <i class="material-icons right">send</i>
           </button>
         </div>
       </form>
     </div>
-
   );
 }
