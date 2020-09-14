@@ -9,13 +9,12 @@ export default function MainForm() {
 
   // console.log(watch("example")); // watch input value by passing the name of it
 
-  console.log();
-
+console.log(fname,lname,email);
   return (
     <>
       <div className="container z-depth-5 initial_form_container">
         <p className="center-align">
-          {fname} {lname} what kind of news would you like?
+          {fname} {lname} would like news about(topics) delivered every (frequency) to {email}
         </p>
         <form onSubmit={handleSubmit(onSubmit)} className="col s12">
           <div className="row">
@@ -54,7 +53,7 @@ export default function MainForm() {
           </div>
           </div>
           <button className="" type="submit" name="action">
-            Submit
+            Confirm
           </button>
         </form>
       </div>

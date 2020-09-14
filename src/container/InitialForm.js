@@ -28,7 +28,7 @@ export default function InitialForm() {
     <div className="container">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="name_row">
-          <div id="firstName" className="input-field ">
+          <div id="firstName" className="">
             <input
               id="first_name"
               type="text"
@@ -154,7 +154,7 @@ export default function InitialForm() {
               )}
             </div>
           <button className="" type="submit" name="action">
-            Submit
+            Next
           </button>
         </div>
       </form>
