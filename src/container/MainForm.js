@@ -3,13 +3,13 @@ import { useForm } from "react-hook-form";
 import { FormContext } from "../context/formContext";
 
 export default function MainForm() {
-  const [fname, setFname, lname, setLname] = useContext(FormContext);
+  const [fname, setFname, lname, setLname,email,setEmail,] = useContext(FormContext);
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = (data) => console.log(data);
 
   // console.log(watch("example")); // watch input value by passing the name of it
 
-  // console.log(fname, lname);
+  console.log();
 
   return (
     <>

@@ -8,6 +8,8 @@ export default function InitialForm() {
     setFname,
     lname,
     setLname,
+    email,
+     setEmail,
     completedInit,
     setComplete,
   ] = useContext(FormContext);
@@ -15,9 +17,10 @@ export default function InitialForm() {
 
   const onSubmit = (data, e, getValues) => {
     console.log(data);
-    const { firstName, lastName } = data;
+    const { firstName, lastName,email } = data;
     setFname(firstName.replace(/\b(\w)/g, (s) => s.toUpperCase()));
     setLname(lastName.replace(/\b(\w)/g, (s) => s.toUpperCase()));
+    setEmail(email);
     setComplete(true);
   };
 
