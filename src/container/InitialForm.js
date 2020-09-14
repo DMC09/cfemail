@@ -14,28 +14,22 @@ export default function InitialForm() {
   const { register, handleSubmit, watch, errors, getValues } = useForm();
 
   const onSubmit = (data, e, getValues) => {
-    console.log(e);
+    console.log(data);
     const { firstName, lastName } = data;
     setFname(firstName.replace(/\b(\w)/g, (s) => s.toUpperCase()));
     setLname(lastName.replace(/\b(\w)/g, (s) => s.toUpperCase()));
     setComplete(true);
   };
 
-  const handleChange = (e) => {
-    e.target.value == ""
-      ? e.target.nextSibling.classList.remove("active")
-      : e.target.nextSibling.classList.add("active");
-  };
   return (
-    <div class="container">
-      <form onSubmit={handleSubmit(onSubmit)} class="">
-        <div class="row">
-          <div class="input-field ">
+    <div className="container">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="name_row">
+          <div id="firstName" className="input-field ">
             <input
-              onChange={(e) => handleChange(e)}
               id="first_name"
               type="text"
-              class="validate"
+              className="validate"
               name="firstName"
               ref={register({
                 required: true,
@@ -43,29 +37,40 @@ export default function InitialForm() {
                 pattern: /^[a-zA-z]+$/,
               })}
             ></input>
-            <label for="first_name">First Name</label>
+            <label label="first_name">First Name</label>
             {errors.firstName?.type === "required" && (
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 Your input is required
               </span>
             )}
             {errors.firstName?.type === "minLength" && (
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 Your input needs to be at least 1 letter
               </span>
             )}
             {errors.firstName?.type === "pattern" && (
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 please only use letters
               </span>
             )}
           </div>
-          <div class="input-field ">
+          <div id="lastName" className="input-field ">
             <input
-              onChange={(e) => handleChange(e)}
               id="last_name"
               type="text"
-              class="validate"
+              className="validate"
               name="lastName"
               ref={register({
                 required: true,
@@ -73,57 +78,53 @@ export default function InitialForm() {
                 pattern: /^[a-zA-z]+$/,
               })}
             ></input>
-            <label for="last_name">Last Name</label>
+            <label label="last_name">Last Name</label>
             {errors.lastName?.type === "required" && (
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 Your input is required
               </span>
             )}
             {errors.lastName?.type === "minLength" && (
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 Your input needs to be at least 1 letter
               </span>
             )}
             {errors.lastName?.type === "pattern" && (
-              <span class="helper-text" data-error="wrong" data-success="right">
+              <span
+                className="helper-text"
+                data-error="wrong"
+                data-success="right"
+              >
                 please only use letters
               </span>
             )}
           </div>
         </div>
-        <label for="email">balls</label>
 
-                  <input name="chexkbox" type="checkbox" value="balls" ref={register}/> hello
-        <div class="row">
-          <div class="input-field ">
-
-
-
-          </div>
-          <input name="hello; hello;bye" type="radio" value="one" ref={register}/> hello
-          <input name="hello; hello;bye" type="radio" value=" two" ref={register}/> helloe
-          <input name="hello; hello;bye" type="radio" value="three" ref={register}/> hello
-
-        </div>
-
-        <div class="row">
-          <div class="">
-            <div class="input-field ">
+        <div className="email_row">
+            <div className="input-field ">
               <input
-                onChange={(e) => handleChange(e)}
                 id="email"
                 type="email"
-                class="validate"
+                className="validate"
                 name="email"
                 ref={register({
                   required: true,
                   pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                 })}
               ></input>
-              <label for="email">Email</label>
+              <label label="email">Email</label>
               {errors.email?.type === "required" && (
                 <span
-                  class="helper-text"
+                  className="helper-text"
                   data-error="wrong"
                   data-success="right"
                 >
@@ -132,7 +133,7 @@ export default function InitialForm() {
               )}
               {errors.email?.type === "minLength" && (
                 <span
-                  class="helper-text"
+                  className="helper-text"
                   data-error="wrong"
                   data-success="right"
                 >
@@ -141,7 +142,7 @@ export default function InitialForm() {
               )}
               {errors.email?.type === "pattern" && (
                 <span
-                  class="helper-text"
+                  className="helper-text"
                   data-error="wrong"
                   data-success="right"
                 >
@@ -149,8 +150,7 @@ export default function InitialForm() {
                 </span>
               )}
             </div>
-          </div>
-          <button class=" " type="submit" name="action">
+          <button className="" type="submit" name="action">
             Submit
           </button>
         </div>
