@@ -111,7 +111,6 @@ export default function InitialForm() {
             )}
           </div>
         </div>
-
         <div className="email_row">
             <div className="input-field ">
               <input
@@ -153,10 +152,11 @@ export default function InitialForm() {
                 </span>
               )}
             </div>
-          <button className="" type="submit" name="action">
-            Next
-          </button>
+
         </div>
+        <button className="" type="submit" name="action">
+          Next
+        </button>
       </form>
     </div>
   );
