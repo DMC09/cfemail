@@ -3,11 +3,15 @@ import { useForm } from "react-hook-form";
 import { FormContext } from "../context/formContext";
 
 export default function MainForm() {
-  const [fname, setFname, lname, setLname,email,setEmail,] = useContext(FormContext);
+  const [fname, setFname, lname, setLname,email,setEmail,frequency, setFrequency,category, setCategory] = useContext(FormContext);
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
     console.log(data)
-  const {categories,frequency} = data
+    // console.log(category)
+const {category,frequency} = data;
+setFrequency(frequency)
+setCategory(category)
+
   };
 
 
@@ -24,21 +28,21 @@ console.log(fname,lname,email);
           <div className="checkbox_row">
           <label label="first_name">categories</label>
             <input
-              name="categories"
+              name="category"
               type="checkbox"
               value="Music "
               ref={register}
             />
             <label label="email">Music</label>
             <input
-              name="categories"
+              name="category"
               type="checkbox"
               value="Movies "
               ref={register}
             />
             <label label="email">Movies</label>
             <input
-              name="categories"
+              name="category"
               type="checkbox"
               value="TV Shows"
               ref={register}

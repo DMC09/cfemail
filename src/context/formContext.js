@@ -12,7 +12,7 @@ export const FormProvider = (props) => {
 
   return (
     <FormContext.Provider
-      value={[fname, setFname, lname, setLname,email, setEmail, completedInit,setComplete,frequency, setFrequency,category, setCategory]}
+      value={[completedInit,setComplete,fname, setFname, lname, setLname,email, setEmail,frequency, setFrequency,category, setCategory]}
     >
       {props.children}
     </FormContext.Provider>
