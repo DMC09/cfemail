@@ -7,11 +7,12 @@ export default function MainForm() {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
     console.log(data)
-
+  const {categories,frequency} = data
   };
 
 
 console.log(fname,lname,email);
+
   return (
     <>
       <div className="main_form_container">
@@ -19,7 +20,7 @@ console.log(fname,lname,email);
           {fname} {lname} would like news about(topics) delivered every (frequency) to {email}
         </p>
         <form onSubmit={handleSubmit(onSubmit)} className="">
-          <div className="row">
+
           <div className="checkbox_row">
           <label label="first_name">categories</label>
             <input
@@ -46,16 +47,18 @@ console.log(fname,lname,email);
           </div>
           <div className="radio_row">
             <div className="input-field ">
-            <label label="first_name">Frequency</label>
-              <input name="Daily" type="radio" value="true" ref={register} />
-              Daily
-              <input name="Weekly" type="radio" value="true" ref={register} />
-              Weekly
-              <input name="Bi-Weekly" type="radio" value="true" ref={register}/>
-              Bi-Weekly
+            <label label="Frequency">Frequency</label>
+
+              <input type="radio" id="male" name="frequency" value="Daily" ref={register} />
+<label for="Daily">Daily</label>
+<input type="radio" id="female" name="frequency" value="Weekly" ref={register} />
+<label for="Weekly">Weekly</label>
+<input type="radio" id="other" name="frequency" value="Bi-Weekly" ref={register} />
+<label for="Bi-Weekly">Bi-Weekly</label>
             </div>
           </div>
-          </div>
+
+
           <button className="" type="submit" name="action">
             Confirm
           </button>
