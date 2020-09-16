@@ -4,21 +4,24 @@ import { FormContext } from "../context/formContext";
 
 export default function MainForm() {
   const [fname, setFname, lname, setLname,email,setEmail,] = useContext(FormContext);
-  const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const { register, handleSubmit, errors } = useForm();
+  const onSubmit = (data) => {
+    console.log(data)
 
-  // console.log(watch("example")); // watch input value by passing the name of it
+  };
+
 
 console.log(fname,lname,email);
   return (
     <>
-      <div className="container z-depth-5 initial_form_container">
-        <p className="center-align">
+      <div className="main_form_container">
+        <p className="">
           {fname} {lname} would like news about(topics) delivered every (frequency) to {email}
         </p>
-        <form onSubmit={handleSubmit(onSubmit)} className="col s12">
+        <form onSubmit={handleSubmit(onSubmit)} className="">
           <div className="row">
           <div className="checkbox_row">
+          <label label="first_name">categories</label>
             <input
               name="categories"
               type="checkbox"
@@ -43,6 +46,7 @@ console.log(fname,lname,email);
           </div>
           <div className="radio_row">
             <div className="input-field ">
+            <label label="first_name">Frequency</label>
               <input name="Daily" type="radio" value="true" ref={register} />
               Daily
               <input name="Weekly" type="radio" value="true" ref={register} />

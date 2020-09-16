@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { FormContext } from "../context/formContext";
 
@@ -13,10 +13,9 @@ export default function InitialForm() {
     completedInit,
     setComplete,
   ] = useContext(FormContext);
-  const { register, handleSubmit, watch, errors, getValues } = useForm();
+  const { register, handleSubmit, errors,  } = useForm();
 
-  const onSubmit = (data, e, getValues) => {
-    console.log(data);
+  const onSubmit = (data, e) => {
     const { firstName, lastName,email } = data;
     setFname(firstName.replace(/\b(\w)/g, (s) => s.toUpperCase()));
     setLname(lastName.replace(/\b(\w)/g, (s) => s.toUpperCase()));
@@ -25,10 +24,11 @@ export default function InitialForm() {
   };
 
   return (
-    <div className="container">
+    <div className="initial_form_container">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="name_row">
           <div id="firstName" className="">
+            <label label="first_name">First Name</label>
             <input
               id="first_name"
               type="text"
@@ -40,7 +40,7 @@ export default function InitialForm() {
                 pattern: /^[a-zA-z]+$/,
               })}
             ></input>
-            <label label="first_name">First Name</label>
+
             {errors.firstName?.type === "required" && (
               <span
                 className="helper-text"
@@ -70,6 +70,7 @@ export default function InitialForm() {
             )}
           </div>
           <div id="lastName" className="input-field ">
+            <label label="last_name">Last Name</label>
             <input
               id="last_name"
               type="text"
@@ -81,7 +82,7 @@ export default function InitialForm() {
                 pattern: /^[a-zA-z]+$/,
               })}
             ></input>
-            <label label="last_name">Last Name</label>
+
             {errors.lastName?.type === "required" && (
               <span
                 className="helper-text"
@@ -113,6 +114,7 @@ export default function InitialForm() {
         </div>
         <div className="email_row">
             <div className="input-field ">
+              <label label="email">Email</label>
               <input
                 id="email"
                 type="email"
@@ -123,7 +125,7 @@ export default function InitialForm() {
                   pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                 })}
               ></input>
-              <label label="email">Email</label>
+
               {errors.email?.type === "required" && (
                 <span
                   className="helper-text"
@@ -152,7 +154,6 @@ export default function InitialForm() {
                 </span>
               )}
             </div>
-
         </div>
         <button className="" type="submit" name="action">
           Next

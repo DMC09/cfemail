@@ -4,5 +4,9 @@
 
 .initial_form_container {
   padding: 1rem;
-  border-radius: 20px;
+border: 3px dashed black
+}
+.main_form_container {
+  padding: 1rem;
+border: 3px dashed black
 }
