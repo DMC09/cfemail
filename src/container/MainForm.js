@@ -25,8 +25,9 @@ console.log(fname,lname,email);
         </p>
         <form onSubmit={handleSubmit(onSubmit)} className="">
 
-          <div className="checkbox_row">
+          <div className="row">
           <label label="first_name">categories</label>
+          <div className="cat_row">
             <input
               name="category"
               type="checkbox"
@@ -49,10 +50,11 @@ console.log(fname,lname,email);
             />
             <label label="email">TV Shows</label>
           </div>
-          <div className="radio_row">
+          </div>
+          <div className="row">
             <div className="input-field ">
             <label label="Frequency">Frequency</label>
-
+            <div className="fre_row">
               <input type="radio" id="male" name="frequency" value="Daily" ref={register} />
 <label for="Daily">Daily</label>
 <input type="radio" id="female" name="frequency" value="Weekly" ref={register} />
@@ -60,9 +62,8 @@ console.log(fname,lname,email);
 <input type="radio" id="other" name="frequency" value="Bi-Weekly" ref={register} />
 <label for="Bi-Weekly">Bi-Weekly</label>
             </div>
+            </div>
           </div>
-
-
           <button className="" type="submit" name="action">
             Confirm
           </button>

@@ -10,3 +10,14 @@ border: 3px dashed black
   padding: 1rem;
 border: 3px dashed black
 }
+
+.row{
+  border: 1px solid green;
+  display: flex;
+flex-flow: column;
+}
+
+.btn{
+  text-align: right;
+
+}

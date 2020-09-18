@@ -9,7 +9,7 @@ export default function InitialForm() {
     lname,
     setLname,
     email,
-     setEmail,
+    setEmail,
     completedInit,
     setComplete,
   ] = useContext(FormContext);
@@ -21,13 +21,12 @@ export default function InitialForm() {
     setLname(lastName.replace(/\b(\w)/g, (s) => s.toUpperCase()));
     setEmail(email);
     setComplete(true);
+  fetch("http://localhost:3001/test").then(res=>res.json()).then(data=>console.log(data));
   };
-
   return (
     <div className="initial_form_container">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="name_row">
-          <div id="firstName" className="">
+          <div id="firstName" className="row">
             <label label="first_name">First Name</label>
             <input
               id="first_name"
@@ -40,7 +39,6 @@ export default function InitialForm() {
                 pattern: /^[a-zA-z]+$/,
               })}
             ></input>
-
             {errors.firstName?.type === "required" && (
               <span
                 className="helper-text"
@@ -69,7 +67,7 @@ export default function InitialForm() {
               </span>
             )}
           </div>
-          <div id="lastName" className="input-field ">
+          <div id="lastName" className="row ">
             <label label="last_name">Last Name</label>
             <input
               id="last_name"
@@ -82,7 +80,6 @@ export default function InitialForm() {
                 pattern: /^[a-zA-z]+$/,
               })}
             ></input>
-
             {errors.lastName?.type === "required" && (
               <span
                 className="helper-text"
@@ -111,9 +108,7 @@ export default function InitialForm() {
               </span>
             )}
           </div>
-        </div>
-        <div className="email_row">
-            <div className="input-field ">
+          <div id="email" className="row">
               <label label="email">Email</label>
               <input
                 id="email"
@@ -125,7 +120,6 @@ export default function InitialForm() {
                   pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                 })}
               ></input>
-
               {errors.email?.type === "required" && (
                 <span
                   className="helper-text"
@@ -153,9 +147,9 @@ export default function InitialForm() {
                   Please enter a valid email address
                 </span>
               )}
-            </div>
-        </div>
-        <button className="" type="submit" name="action">
+
+          </div>
+          <button className="btn next-btn" type="submit" name="action">
           Next
         </button>
       </form>
