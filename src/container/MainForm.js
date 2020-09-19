@@ -1,21 +1,23 @@
 import React, { useContext } from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { FormContext } from "../context/formContext";
 
 export default function MainForm() {
   const [fname, setFname, lname, setLname,email,setEmail,frequency, setFrequency,category, setCategory] = useContext(FormContext);
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (data) => {
-    console.log(data)
+  const onSubmit = async (data) => {
+
     // console.log(category)
-const {category,frequency} = data;
-setFrequency(frequency)
-setCategory(category)
+const {category,frequency} = await data;
+await setFrequency(frequency)
+await setCategory(category)
+await axios.post("http://localhost:3001/post", { fname,lname,email,frequency,category });
 
   };
 
 
-console.log(fname,lname,email);
+
 
   return (
     <>
