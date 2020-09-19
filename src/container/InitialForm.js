@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import axios from 'axios';
 import { useForm } from "react-hook-form";
 import { FormContext } from "../context/formContext";
 
@@ -21,7 +22,7 @@ export default function InitialForm() {
     setLname(lastName.replace(/\b(\w)/g, (s) => s.toUpperCase()));
     setEmail(email);
     setComplete(true);
-  fetch("http://localhost:3001/test").then(res=>res.json()).then(data=>console.log(data));
+  axios.post("http://localhost:3001/post",{fname,lname,email})
   };
   return (
     <div className="initial_form_container">
