@@ -14,15 +14,18 @@ export default function InitialForm() {
     completedInit,
     setComplete,
   ] = useContext(FormContext);
-  const { register, handleSubmit, errors,  } = useForm();
+  const { register, handleSubmit, errors,getValues  } = useForm();
+  const onSubmit = async (data) => {
+    // const singleValue = await getValues(["firstName", "lastName","email"]);
+    // const {firstName, lastName,email} = await singleValue;
+    const { fname, lname,email } = await data;
+    await setFname(fname.replace(/\b(\w)/g, (s) => s.toUpperCase()));
+    await setLname(lname.replace(/\b(\w)/g, (s) => s.toUpperCase()));
+    await setEmail(email);
+  await  axios.post("http://localhost:3001/post",{fname,lname,email})
+  await  setComplete(true);
 
-  const onSubmit = (data, e) => {
-    const { firstName, lastName,email } = data;
-    setFname(firstName.replace(/\b(\w)/g, (s) => s.toUpperCase()));
-    setLname(lastName.replace(/\b(\w)/g, (s) => s.toUpperCase()));
-    setEmail(email);
-    setComplete(true);
-  axios.post("http://localhost:3001/post",{fname,lname,email})
+  // console.log(singleValue);
   };
   return (
     <div className="initial_form_container">
@@ -33,14 +36,14 @@ export default function InitialForm() {
               id="first_name"
               type="text"
               className="validate"
-              name="firstName"
+              name="fname"
               ref={register({
                 required: true,
                 minLength: 1,
                 pattern: /^[a-zA-z]+$/,
               })}
             ></input>
-            {errors.firstName?.type === "required" && (
+            {errors.fname?.type === "required" && (
               <span
                 className="helper-text"
                 data-error="wrong"
@@ -49,7 +52,7 @@ export default function InitialForm() {
                 Your input is required
               </span>
             )}
-            {errors.firstName?.type === "minLength" && (
+            {errors.fname?.type === "minLength" && (
               <span
                 className="helper-text"
                 data-error="wrong"
@@ -58,7 +61,7 @@ export default function InitialForm() {
                 Your input needs to be at least 1 letter
               </span>
             )}
-            {errors.firstName?.type === "pattern" && (
+            {errors.fname?.type === "pattern" && (
               <span
                 className="helper-text"
                 data-error="wrong"
@@ -71,17 +74,19 @@ export default function InitialForm() {
           <div id="lastName" className="row ">
             <label label="last_name">Last Name</label>
             <input
+            onChange={e=>setLname(e.target.value.replace(/\b(\w)/g, (s) => s.toUpperCase()))}
               id="last_name"
+              v
               type="text"
               className="validate"
-              name="lastName"
+              name="lname"
               ref={register({
                 required: true,
                 minLength: 1,
                 pattern: /^[a-zA-z]+$/,
               })}
             ></input>
-            {errors.lastName?.type === "required" && (
+            {errors.lname?.type === "required" && (
               <span
                 className="helper-text"
                 data-error="wrong"
@@ -90,7 +95,7 @@ export default function InitialForm() {
                 Your input is required
               </span>
             )}
-            {errors.lastName?.type === "minLength" && (
+            {errors.lname?.type === "minLength" && (
               <span
                 className="helper-text"
                 data-error="wrong"
@@ -99,7 +104,7 @@ export default function InitialForm() {
                 Your input needs to be at least 1 letter
               </span>
             )}
-            {errors.lastName?.type === "pattern" && (
+            {errors.lname?.type === "pattern" && (
               <span
                 className="helper-text"
                 data-error="wrong"
