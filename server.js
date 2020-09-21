@@ -1,3 +1,5 @@
+"use strict";
+
 // modules
 const express = require('express')
 const cors = require('cors')
@@ -10,6 +12,31 @@ const port = process.env.PORT ;
 const app = express()
 dotenv.config();
 
+// set up for node nodemailer
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.USERNAME ,
+    pass: process.env.PASSWORD,
+
+  }
+})
+// set up for mail options
+const mailOptions = {
+  from: 'newsletbot@gmail.com',
+  to: "dharminlive1213@gmail.com",
+  subject: 'test',
+  text:'it works!!!?'
+}
+
+// set up to actually send the thing.
+transporter.sendMail(mailOptions,function(err,data){
+  if(err){
+    console.log(err);
+  } else{
+    console.log('the email was successfully sent!');
+  }
+})
 // middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
@@ -25,31 +52,6 @@ app.get('/', (req, res) => {
 
 app.post('/post', (req, res) => {
   console.log(req.body)
-  async function main() {
-  // Generate test SMTP service account from ethereal.email
-  // Only needed if you don't have a real mail account for testing
-  let testAccount = await nodemailer.createTestAccount();
-
-  // create reusable transporter object using the default SMTP transport
-  let transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
-    secure: false, // true for 465, false for other ports
-    auth: {
-      user: testAccount.user, // generated ethereal user
-      pass: testAccount.pass, // generated ethereal password
-    },
-  });
-
-  // send mail with defined transport object
-  let info = await transporter.sendMail({
-    from: '"Fred Foo 👻" <foo@example.com>', // sender address
-    to: "dharminlive1213@live.com", // list of receivers
-    subject: "Hello ✔", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
-  });
-
 })
 
 app.listen(port, () => {
