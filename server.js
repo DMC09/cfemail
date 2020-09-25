@@ -42,7 +42,7 @@ app.post('/post', (req, res) => {
      let mailOptions = {
        from: 'newsletbot@gmail.com',
        to: req.body.email,
-       subject: 'Sending Html in node mailer',
+       subject: 'Confirm your Beta Access',
        html: html
      };
   transporter.sendMail(mailOptions,(err,data)=> err ? console.log(err): console.log(`sent`))

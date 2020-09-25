@@ -23,7 +23,6 @@ export default function InitialForm() {
     await setComplete(true);
   };
   return (
-
       <form className="form_container" onSubmit={handleSubmit(onSubmit)}>
       <fieldset>
       <h1 style={{textAlign:"center"}}>Sign up for the beta</h1>
@@ -35,7 +34,6 @@ export default function InitialForm() {
             type="text"
             className="validate"
             name="fname"
-
             ref={register({
               required: true,
               minLength: 1,
@@ -73,13 +71,7 @@ export default function InitialForm() {
         <div id="lastName" className="input-field ">
           <label label="last_name">Last Name</label>
           <input
-            onChange={(e) =>
-              setLname(
-                e.target.value.replace(/\b(\w)/g, (s) => s.toUpperCase())
-              )
-            }
             id="last_name"
-            v
             type="text"
             className="validate"
             name="lname"

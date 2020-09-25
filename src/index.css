@@ -13,35 +13,32 @@ form {
   padding: 2.5rem 1rem;
   width: 650px;
   max-width: 80vw;
-
 }
 form fieldset {
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   padding: 1.5rem 1rem;
-
   display: flex;
-
 }
 /* rows */
-.name_row{
-  border: 1px dashed green;
+.name_row {
+  /* border: 1px dashed green; */
   display: flex;
   padding: 1rem 0;
 }
 
-.email_row{
-  border: 1px dashed green;
+.email_row {
+  /* border: 1px dashed green; */
   display: flex;
-padding: 1rem .5rem;
+  padding: 1rem 0.5rem;
 }
 #email {
-width: 100%;
+  width: 100%;
 }
 #firstName {
-width: 50%;
-padding: 0 0.5rem;
+  width: 50%;
+  padding: 0 0.5rem;
 }
 #lastName {
-width: 50%;
-padding: 0 0.5rem;
+  width: 50%;
+  padding: 0 0.5rem;
 }
