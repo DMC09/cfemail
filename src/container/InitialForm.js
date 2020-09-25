@@ -23,15 +23,19 @@ export default function InitialForm() {
     await setComplete(true);
   };
   return (
-    <div className="initial_form_container">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div id="firstName" className="row">
+
+      <form className="form_container" onSubmit={handleSubmit(onSubmit)}>
+      <fieldset>
+      <h1 style={{textAlign:"center"}}>Sign up for the beta</h1>
+        <div className="name_row">
+        <div id="firstName" className="input-field">
           <label label="first_name">First Name</label>
           <input
             id="first_name"
             type="text"
             className="validate"
             name="fname"
+
             ref={register({
               required: true,
               minLength: 1,
@@ -66,7 +70,7 @@ export default function InitialForm() {
             </span>
           )}
         </div>
-        <div id="lastName" className="row ">
+        <div id="lastName" className="input-field ">
           <label label="last_name">Last Name</label>
           <input
             onChange={(e) =>
@@ -113,10 +117,12 @@ export default function InitialForm() {
             </span>
           )}
         </div>
-        <div id="email" className="row">
+        </div>
+        <div className="email_row">
+        <div id="email" className="input-field">
           <label label="email">Email</label>
           <input
-            id="email"
+
             type="email"
             className="validate"
             name="email"
@@ -153,10 +159,13 @@ export default function InitialForm() {
             </span>
           )}
         </div>
+        </div>
+
         <button className="btn next-btn" type="submit" name="action">
-          Next
+        Next
         </button>
+        </fieldset>
       </form>
-    </div>
+
   );
 }

@@ -1,23 +1,47 @@
 @import "./stylesheets/utility.css";
 @import "./stylesheets/generic.css";
+@import "./stylesheets/reset.css";
+
+:root {
+  --main-color: #bac4ca;
+  --secondary-color: #364954;
+  --tertiary-color: #83b2ca;
+}
 /* Main styles  */
+form {
+  border: 4px dashed black;
+  padding: 2.5rem 1rem;
+  width: 650px;
+  max-width: 80vw;
 
-.initial_form_container {
-  padding: 1rem;
-border: 3px dashed black
 }
-.main_form_container {
-  padding: 1rem;
-border: 3px dashed black
-}
+form fieldset {
+  border: 2px solid purple;
+  padding: 1.5rem 1rem;
 
-.row{
-  border: 1px solid green;
   display: flex;
-flex-flow: column;
+
+}
+/* rows */
+.name_row{
+  border: 1px dashed green;
+  display: flex;
+  padding: 1rem 0;
 }
 
-.btn{
-  text-align: right;
-
+.email_row{
+  border: 1px dashed green;
+  display: flex;
+padding: 1rem .5rem;
+}
+#email {
+width: 100%;
+}
+#firstName {
+width: 50%;
+padding: 0 0.5rem;
+}
+#lastName {
+width: 50%;
+padding: 0 0.5rem;
 }
