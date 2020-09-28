@@ -13,17 +13,20 @@ form {
   padding: 2.5rem 1rem;
   width: 650px;
   max-width: 80vw;
-  background: var(--main-color);
+  border-radius: 15px;
+  background: #364954;
+  box-shadow:  7px -7px 14px #243037,
+               -7px 7px 14px #486271;
 }
 form fieldset {
 
   padding: 1.5rem 1rem;
-  display: flex;
+
 }
 /* rows */
 .name_row {
 
-  display: flex;
+
   padding: 1rem 0;
 }
 
@@ -57,6 +60,7 @@ input 				{
   width:300px;
   border:none;
   border-bottom:1px solid #757575;
+  background: none;
 }
 input:focus 		{ outline:none; }
 

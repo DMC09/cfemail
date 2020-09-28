@@ -45,8 +45,7 @@ export default function MainForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="form_container">
       <h1 style={{ textAlign: "center" }}>Almost there, {fname}!</h1>
       <div className="username_row">
-        <div id="username" className="input-field">
-          <label label="username">Username</label>
+        <div id="username" className="group">
           <input
             type="text"
             className="validate"
@@ -57,6 +56,9 @@ export default function MainForm() {
               pattern: /^(?=.*[a-zA-Z\d].*)[a-zA-Z\d!@#$%&*]{7,}$/,
             })}
           ></input>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label >Username</label>
           {errors.uname?.type === "required" && (
             <span
               className="helper-text"
@@ -87,9 +89,7 @@ export default function MainForm() {
         </div>
       </div>
       <div className="password_row">
-        <div id="password" className="input-field">
-          <label label="password">Password</label>
-          <i onClick={togglePasswordVisiblity}>{eye}</i>
+        <div id="password" className="group">
           <input
             type={passwordShown ? "text" : "password"}
             className="validate"
@@ -100,6 +100,10 @@ export default function MainForm() {
               pattern: /^[a-zA-z]+$/,
             })}
           ></input>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label label="password">Password</label>
+          <i onClick={togglePasswordVisiblity}>{eye}</i>
 
           {errors.pword?.type === "required" && (
             <span

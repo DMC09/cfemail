@@ -23,17 +23,23 @@ export default function InitialForm() {
     await setComplete(true);
   };
   return (
-    <form className="form_container" onSubmit={handleSubmit(onSubmit)}>
+    <form  novalidate className="form_container" onSubmit={handleSubmit(onSubmit)}>
       <fieldset>
         <h1 style={{ textAlign: "center" }}>Sana beta signup form!</h1>
         <div className="name_row">
+          {/* <div class="group">
+            <input type="text" required />
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Name</label>
+          </div> */}
           <div id="firstName" className=" group">
             <input
               id="first_name"
               type="text"
               className="validate"
               name="fname"
-              required
+
               ref={register({
                 required: true,
                 minLength: 1,
@@ -71,25 +77,22 @@ export default function InitialForm() {
               </span>
             )}
           </div>
-          {/* <div class="group">
-            <input type="text" required />
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label>Name</label>
-          </div> */}
-          {/* <div id="lastName" className="input-field ">
-            <label label="last_name">Last Name</label>
+          <div id="lastName" className="group ">
             <input
               id="last_name"
               type="text"
               className="validate"
               name="lname"
+
               ref={register({
                 required: true,
                 minLength: 1,
                 pattern: /^[a-zA-z]+$/,
               })}
             ></input>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label >Last Name</label>
             {errors.lname?.type === "required" && (
               <span
                 className="helper-text"
@@ -117,20 +120,23 @@ export default function InitialForm() {
                 please only use letters
               </span>
             )}
-          </div> */}
+          </div>
         </div>
         <div className="email_row">
-          <div id="email" className="input-field">
-            <label label="email">Email</label>
+          <div id="email" className="group">
             <input
               type="email"
               className="validate"
               name="email"
+
               ref={register({
                 required: true,
                 pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
               })}
             ></input>
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label >email</label>
             {errors.email?.type === "required" && (
               <span
                 className="helper-text"
