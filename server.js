@@ -201,7 +201,7 @@ app.post('/post', (req, res) => {
   <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
   <!--<![endif]-->
   <div align="center" class="img-container center autowidth" style="padding-right: 0px;padding-left: 0px;">
-  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img align="center" alt="Alternate text" border="0" class="center autowidth" src="https://i.pinimg.com/236x/a0/c3/09/a0c309739774fefe8309e6750b0053a3.jpg" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 200px; display: block;" title="Alternate text" width="200"/>
+  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="center"><![endif]--><img align="center" alt="Alternate text" border="0" class="center autowidth" src="https://res.cloudinary.com/dlvy7wjxk/image/upload/v1601506260/logo_qdyhlp.png" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 200px; display: block;" title="Alternate text" width="200"/>
   <!--[if mso]></td></tr></table><![endif]-->
   </div>
   <!--[if (!mso)&(!IE)]><!-->
