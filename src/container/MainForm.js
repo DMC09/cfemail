@@ -42,14 +42,16 @@ export default function MainForm() {
     });
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="form_container">
+    <form noValidate onSubmit={handleSubmit(onSubmit)} className="form_container">
+    <fieldset>
+
       <h1 style={{ textAlign: "center" }}>Almost there, {fname}!</h1>
-      <div className="username_row">
         <div id="username" className="group">
           <input
             type="text"
             className="validate"
             name="uname"
+            required
             ref={register({
               required: true,
               minLength: 1,
@@ -87,13 +89,12 @@ export default function MainForm() {
             </span>
           )}
         </div>
-      </div>
-      <div className="password_row">
         <div id="password" className="group">
           <input
             type={passwordShown ? "text" : "password"}
             className="validate"
             name="pword"
+            required
             ref={register({
               required: true,
               minLength: 1,
@@ -102,9 +103,8 @@ export default function MainForm() {
           ></input>
           <span class="highlight"></span>
           <span class="bar"></span>
-          <label label="password">Password</label>
-          <i onClick={togglePasswordVisiblity}>{eye}</i>
-
+          <label >Password</label>
+          <i style={{ color: "#E0E0E0"}} onClick={togglePasswordVisiblity}>{eye}</i>
           {errors.pword?.type === "required" && (
             <span
               className="helper-text"
@@ -133,31 +133,33 @@ export default function MainForm() {
             </span>
           )}
         </div>
-      </div>
-      <div className="subscribe_row">
-        <div className="input-field ">
-          <label label="Frequency">Subscribe to Newsletter?</label>
+        <div className="">
+          <p style={{color: "#E0E0E0",fontSize:18}}>Subscribe to Newsletter?</p>
           <div className="newsletter">
+            <label style={{position: "initial",color: "#E0E0E0",fontSize:18,top:20,left:30,position:'relative'}}>Yes</label>
             <input
               type="radio"
               name="isSubscribing"
               value="true"
               ref={register}
             />
-            <label for="Weekly">Yes</label>
+            <label style={{position: "initial",color: "#E0E0E0",fontSize:18,top:20,left:30,position:'relative'}}>No</label>
             <input
               type="radio"
               name="isSubscribing"
               value="false"
               ref={register}
             />
-            <label for="Bi-Weekly">No</label>
           </div>
         </div>
-      </div>
-      <button className="btn confirm-btn" type="submit" name="action">
+      <button className="myButton" type="submit" name="action">
         Confirm
       </button>
+
+    </fieldset>
     </form>
   );
 }
+// position: relative;
+// top: -30px;
+// right: -290px;

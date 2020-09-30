@@ -4,140 +4,183 @@
 
 :root {
   --main-color: #364954;
-  --secondary-color: #EE982B;
-  --tertiary-color: #E0E0E0;
+  --secondary-color: #ee982b;
+  --tertiary-color: #e0e0e0;
 }
 /* Main styles  */
+.sign_up {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
 form {
-
-  padding: 2.5rem 1rem;
+  padding: 1rem ;
   width: 650px;
   max-width: 80vw;
   border-radius: 15px;
   background: #364954;
-  box-shadow:  7px -7px 14px #243037,
-               -7px 7px 14px #486271;
+  box-shadow: -7px 5px 7px 1px #333, -7px 5px 7px 1px #333;
 }
 form fieldset {
-
   padding: 1.5rem 1rem;
-
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 2.5rem;
+  height:150px;
+  width:150px;
 }
 /* rows */
-.name_row {
 
-
-  padding: 1rem 0;
+.myButton {
+  box-shadow: -7px 5px 7px 1px #333;
+  background: linear-gradient(to bottom, #ee992b 5%, #ee992b 100%);
+  background-color: #ee992b;
+  border-radius: 11px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  border: none;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 13px 32px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
+  transition: 0.3s all ease-in-out;
+  margin: 0 auto;
+  display: block;
 }
-
-.email_row {
-
-  display: flex;
-  padding: 1rem 0.5rem;
+.myButton:hover {
+  background: linear-gradient(to bottom, #ee992b 5%, #ee992b 100%);
+  background-color: #ee992b;
+  transform: scale(1.05);
 }
-#email {
-  width: 100%;
+.myButton:active {
+  position: relative;
+  top: 1px;
 }
-#firstName {
-  width: 50%;
-  padding: 0 0.5rem;
-}
-#lastName {
-  width: 50%;
-  padding: 0 0.5rem;
-}
-
 
 /* form starting stylings ------------------------------- */
-.group 			  {
-  position:relative;
-  margin-bottom:45px;
+.group {
+  position: relative;
+  margin-bottom: 30px;
 }
-input 				{
-  font-size:18px;
-  padding:10px 10px 10px 5px;
-  display:block;
-  width:300px;
-  border:none;
-  border-bottom:1px solid #757575;
-  background: none;
+
+input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  color: var(--tertiary-color);
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid var(--tertiary-color);
 }
-input:focus 		{ outline:none; }
+input:focus {
+  outline: none;
+}
 
 /* LABEL ======================================= */
-label 				 {
-  color:#999;
-  font-size:18px;
-  font-weight:normal;
-  position:absolute;
-  pointer-events:none;
-  left:5px;
-  top:10px;
-  transition:0.2s ease all;
-  -moz-transition:0.2s ease all;
-  -webkit-transition:0.2s ease all;
+label {
+  color: var(--tertiary-color);
+  font-size: 18px;
+  font-weight: normal;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
 
 /* active state */
-input:focus ~ label, input:valid ~ label 		{
-  top:-20px;
-  font-size:14px;
-  color:#5264AE;
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: var(--tertiary-color);
 }
 
 /* BOTTOM BARS ================================= */
-.bar 	{ position:relative; display:block; width:300px; }
-.bar:before, .bar:after 	{
-  content:'';
-  height:2px;
-  width:0;
-  bottom:1px;
-  position:absolute;
-  background:#5264AE;
-  transition:0.2s ease all;
-  -moz-transition:0.2s ease all;
-  -webkit-transition:0.2s ease all;
+.bar {
+  position: relative;
+  display: block;
+}
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: var(--secondary-color);
+  transition: 0.2s ease-in-out all;
+  -moz-transition: 0.2s ease-in-out all;
+  -webkit-transition: 0.2s ease-in-out all;
 }
 .bar:before {
-  left:50%;
+  left: 50%;
 }
 .bar:after {
-  right:50%;
+  right: 50%;
 }
 
 /* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
-  width:50%;
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
 }
 
 /* HIGHLIGHTER ================================== */
 .highlight {
-  position:absolute;
-  height:60%;
-  width:100px;
-  top:25%;
-  left:0;
-  pointer-events:none;
-  opacity:0.5;
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 /* active state */
 input:focus ~ .highlight {
-  -webkit-animation:inputHighlighter 0.3s ease;
-  -moz-animation:inputHighlighter 0.3s ease;
-  animation:inputHighlighter 0.3s ease;
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
 }
 
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
 }
 @-moz-keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
 }
 @keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
 }
