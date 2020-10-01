@@ -8,14 +8,12 @@ const nodemailer = require("nodemailer");
 const port = 3001;
 const fs = require('fs');
 
-
 // gen setup | middleware
 const app = express()
 dotenv.config();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 app.use(cors())
-
 
 // base route
 app.get('/', (req, res) => {
@@ -410,30 +408,13 @@ transporter.sendMail(mailOptions, function(error, info){
   if (error) {
 	console.log(error);
   } else {
-    console.log('Email sent: ' + info.response);
+    console.log(`email sent to ${email}` );
+    console.log(info + info.response);
   }
 })
-  // set up for mail options
-  // fs.readFile('./email.html', {encoding: 'utf-8'}, function (err, html) {
-  //  if (err) {
-  //    console.log(err);
-  //  } else {
-  //    let mailOptions = {
-  //      from: 'newsletbot@gmail.com',
-  //      to: req.body.email,
-  //      subject: 'Confirm your Beta Access',
-  //      html: html
-  //    };
-  // transporter.sendMail(mailOptions,(err,data)=> err ? console.log(err): console.log(`sent`))
-  //
-  //  }
-  // });
 
 console.log('message was sent!');
 })
-
-
-
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

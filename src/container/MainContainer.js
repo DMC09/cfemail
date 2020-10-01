@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { FormContext } from "../context/formContext";
-import InitialForm from "./InitialForm";
-import MainForm from "./MainForm";
+import InitialForm from "../components/InitialForm";
+import MainForm from "../components/MainForm";
 
 const MainContainer = () => {
   const [

@@ -9,11 +9,8 @@ const eye = <FontAwesomeIcon icon={faEye} />;
 export default function MainForm() {
   const [
     fname,
-    setFname,
     lname,
-    setLname,
     email,
-    setEmail,
     uname,
     setUname,
     pword,
@@ -44,8 +41,7 @@ export default function MainForm() {
   return (
     <form noValidate onSubmit={handleSubmit(onSubmit)} className="form_container">
     <fieldset>
-
-      <h1 style={{ textAlign: "center" }}>Almost there, {fname}!</h1>
+      <h1 className="form_status" style={{ textAlign: "center" }}>Almost done, {fname}!</h1>
         <div id="username" className="group">
           <input
             type="text"
@@ -55,7 +51,7 @@ export default function MainForm() {
             ref={register({
               required: true,
               minLength: 1,
-              pattern: /^(?=.*[a-zA-Z\d].*)[a-zA-Z\d!@#$%&*]{7,}$/,
+              pattern: /^[a-zA-Z0-9_]{1,}[a-zA-Z]+[0-9]*$/,
             })}
           ></input>
           <span class="highlight"></span>
@@ -76,7 +72,7 @@ export default function MainForm() {
               data-error="wrong"
               data-success="right"
             >
-              Your input needs to be at least 1 letter
+              Your username must be at least 1 character
             </span>
           )}
           {errors.uname?.type === "pattern" && (
@@ -85,7 +81,7 @@ export default function MainForm() {
               data-error="wrong"
               data-success="right"
             >
-              please only use letters
+              please use letters and numbers
             </span>
           )}
         </div>
@@ -98,7 +94,7 @@ export default function MainForm() {
             ref={register({
               required: true,
               minLength: 1,
-              pattern: /^[a-zA-z]+$/,
+              pattern: /^[A-Za-z]\w{7,15}$/,
             })}
           ></input>
           <span class="highlight"></span>
@@ -120,7 +116,7 @@ export default function MainForm() {
               data-error="wrong"
               data-success="right"
             >
-              Your input needs to be at least 1 letter
+              Your password needs to be at least 1 character
             </span>
           )}
           {errors.pword?.type === "pattern" && (
@@ -129,21 +125,21 @@ export default function MainForm() {
               data-error="wrong"
               data-success="right"
             >
-              please only use letters
+              please use Alphanumeric values
             </span>
           )}
         </div>
-        <div className="">
+        <div className="sub_group">
           <p style={{color: "#E0E0E0",fontSize:18}}>Subscribe to Newsletter?</p>
           <div className="newsletter">
-            <label style={{position: "initial",color: "#E0E0E0",fontSize:18,top:20,left:30,position:'relative'}}>Yes</label>
+            <label style={{position: "initial",color: "#E0E0E0",fontSize:18,top:20,left:30}}>Yes</label>
             <input
               type="radio"
               name="isSubscribing"
               value="true"
               ref={register}
             />
-            <label style={{position: "initial",color: "#E0E0E0",fontSize:18,top:20,left:30,position:'relative'}}>No</label>
+            <label style={{position: "initial",color: "#E0E0E0",fontSize:18,top:20,left:30}}>No</label>
             <input
               type="radio"
               name="isSubscribing"
@@ -160,6 +156,3 @@ export default function MainForm() {
     </form>
   );
 }
-// position: relative;
-// top: -30px;
-// right: -290px;

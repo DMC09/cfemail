@@ -8,8 +8,9 @@
   --tertiary-color: #e0e0e0;
 }
 /* Main styles  */
-.sign_up {
+.form_status {
   font-size: 2rem;
+  margin-bottom: 3rem;
   color: var(--secondary-color);
 }
 form {
@@ -79,6 +80,7 @@ input {
   width: 300px;
   border: none;
   border-bottom: 1px solid var(--tertiary-color);
+  
 }
 input:focus {
   outline: none;

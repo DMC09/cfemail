@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import axios from "axios";
 import { useForm } from "react-hook-form";
 import { FormContext } from "../context/formContext";
 
@@ -29,7 +28,7 @@ export default function InitialForm() {
       onSubmit={handleSubmit(onSubmit)}
     >
       <fieldset>
-        <h1 className="sign_up" style={{ textAlign: "center" }}>Sana beta signup form!</h1>
+        <h1 className="form_status" style={{ textAlign: "center" }}>Sana beta signup form!</h1>
           <div id="firstName" className=" group">
             <input
               id="first_name"
