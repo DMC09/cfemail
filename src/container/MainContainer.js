@@ -9,7 +9,7 @@ const MainContainer = () => {
   ] = useContext(FormContext);
   return (
     <>
-    <img className="logo" src={require('../images/logo.png')}/>
+    <img className="logo" alt="logo" src={require('../images/logo.png')}/>
       {completedInit ? <MainForm /> : <InitialForm />}
     </>
   );

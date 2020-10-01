@@ -42,8 +42,8 @@ export default function InitialForm() {
                 pattern: /^[a-zA-z]+$/,
               })}
             ></input>
-            <span class="highlight"></span>
-            <span class="bar"></span>
+            <span className="highlight"></span>
+            <span className="bar"></span>
             <label>First Name</label>
             {errors.fname?.type === "required" && (
               <span
@@ -86,8 +86,8 @@ export default function InitialForm() {
                 pattern: /^[a-zA-z]+$/,
               })}
             ></input>
-            <span class="highlight"></span>
-            <span class="bar"></span>
+            <span className="highlight"></span>
+            <span className="bar"></span>
             <label>Last Name</label>
             {errors.lname?.type === "required" && (
               <span
@@ -130,8 +130,8 @@ export default function InitialForm() {
                 pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
               })}
             ></input>
-            <span class="highlight"></span>
-            <span class="bar"></span>
+            <span className="highlight"></span>
+            <span className="bar"></span>
             <label>Email</label>
             {errors.email?.type === "required" && (
               <span

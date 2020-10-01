@@ -7,10 +7,14 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 const eye = <FontAwesomeIcon icon={faEye} />;
 
 export default function MainForm() {
+
   const [
     fname,
+    setFname,
     lname,
+    setLname,
     email,
+    setEmail,
     uname,
     setUname,
     pword,
@@ -24,7 +28,7 @@ export default function MainForm() {
     setPasswordShown(passwordShown ? false : true);
   };
   const onSubmit = async (data) => {
-    console.log(data)
+    // console.log(data)
     const { isSubscribing,uname,pword } = await data;
     await setUname(uname);
     await setPword(pword);
@@ -54,8 +58,8 @@ export default function MainForm() {
               pattern: /^[a-zA-Z0-9_]{1,}[a-zA-Z]+[0-9]*$/,
             })}
           ></input>
-          <span class="highlight"></span>
-          <span class="bar"></span>
+          <span className="highlight"></span>
+          <span className="bar"></span>
           <label >Username</label>
           {errors.uname?.type === "required" && (
             <span
@@ -97,8 +101,8 @@ export default function MainForm() {
               pattern: /^[A-Za-z]\w{7,15}$/,
             })}
           ></input>
-          <span class="highlight"></span>
-          <span class="bar"></span>
+          <span className="highlight"></span>
+          <span className="bar"></span>
           <label >Password</label>
           <i style={{ color: "#E0E0E0"}} onClick={togglePasswordVisiblity}>{eye}</i>
           {errors.pword?.type === "required" && (
@@ -151,7 +155,6 @@ export default function MainForm() {
       <button className="myButton" type="submit" name="action">
         Confirm
       </button>
-
     </fieldset>
     </form>
   );
