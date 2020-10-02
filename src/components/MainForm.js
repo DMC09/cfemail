@@ -7,7 +7,6 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 const eye = <FontAwesomeIcon icon={faEye} />;
 
 export default function MainForm() {
-
   const [
     fname,
     setFname,
@@ -24,28 +23,44 @@ export default function MainForm() {
   ] = useContext(FormContext);
   const [passwordShown, setPasswordShown] = useState(false);
   const { register, handleSubmit, errors } = useForm();
+  const url = "https://sana-beta.herokuapp.com/post";
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };
   const onSubmit = async (data) => {
     // console.log(data)
-    const { isSubscribing,uname,pword } = await data;
+    const { isSubscribing, uname, pword } = await data;
     await setUname(uname);
     await setPword(pword);
     await setSubscribe(isSubscribing);
-    await axios.post("https://sana-beta.herokuapp.com/post", {
-      fname,
-      lname,
-      email,
-      uname,
-      pword,
-      isSubscribing
-    }).then(result=>console.log(result));
+    await axios
+      .post(url, {
+        fname,
+        lname,
+        email,
+        uname,
+        pword,
+        isSubscribing,
+      })
+      .then(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   };
   return (
-    <form noValidate onSubmit={handleSubmit(onSubmit)} className="form_container">
-    <fieldset>
-      <h1 className="form_status" style={{ textAlign: "center" }}>Almost done, {fname}!</h1>
+    <form
+      noValidate
+      onSubmit={handleSubmit(onSubmit)}
+      className="form_container"
+    >
+      <fieldset>
+        <h1 className="form_status" style={{ textAlign: "center" }}>
+          Almost done, {fname}!
+        </h1>
         <div id="username" className="group">
           <input
             type="text"
@@ -60,7 +75,7 @@ export default function MainForm() {
           ></input>
           <span className="highlight"></span>
           <span className="bar"></span>
-          <label >Username</label>
+          <label>Username</label>
           {errors.uname?.type === "required" && (
             <span
               className="helper-text"
@@ -103,8 +118,10 @@ export default function MainForm() {
           ></input>
           <span className="highlight"></span>
           <span className="bar"></span>
-          <label >Password</label>
-          <i style={{ color: "#E0E0E0"}} onClick={togglePasswordVisiblity}>{eye}</i>
+          <label>Password</label>
+          <i style={{ color: "#E0E0E0" }} onClick={togglePasswordVisiblity}>
+            {eye}
+          </i>
           {errors.pword?.type === "required" && (
             <span
               className="helper-text"
@@ -134,16 +151,38 @@ export default function MainForm() {
           )}
         </div>
         <div className="sub_group">
-          <p style={{color: "#E0E0E0",fontSize:18}}>Subscribe to Newsletter?</p>
+          <p style={{ color: "#E0E0E0", fontSize: 18 }}>
+            Subscribe to Newsletter?
+          </p>
           <div className="newsletter">
-            <label style={{position: "initial",color: "#E0E0E0",fontSize:18,top:20,left:30}}>Yes</label>
+            <label
+              style={{
+                position: "initial",
+                color: "#E0E0E0",
+                fontSize: 18,
+                top: 20,
+                left: 30,
+              }}
+            >
+              Yes
+            </label>
             <input
               type="radio"
               name="isSubscribing"
               value="true"
               ref={register}
             />
-            <label style={{position: "initial",color: "#E0E0E0",fontSize:18,top:20,left:30}}>No</label>
+            <label
+              style={{
+                position: "initial",
+                color: "#E0E0E0",
+                fontSize: 18,
+                top: 20,
+                left: 30,
+              }}
+            >
+              No
+            </label>
             <input
               type="radio"
               name="isSubscribing"
@@ -152,10 +191,10 @@ export default function MainForm() {
             />
           </div>
         </div>
-      <button className="myButton" type="submit" name="action">
-        Confirm
-      </button>
-    </fieldset>
+        <button className="myButton" type="submit" name="action">
+          Confirm
+        </button>
+      </fieldset>
     </form>
   );
 }

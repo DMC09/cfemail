@@ -20,6 +20,7 @@ export default function InitialForm() {
     await setLname(lname.replace(/\b(\w)/g, (s) => s.toUpperCase()));
     await setEmail(email);
     await setComplete(true);
+    console.log(fname,lname,email)
   };
   return (
     <form
