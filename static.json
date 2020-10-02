@@ -1,9 +1,0 @@
-{
-  "root": "build/",
-  "routes": {
-    "/**": "index.html"
-  },
-  "proxies": {
-      "/": "https://sana-beta.herokuapp.com/"
-  }
-}
