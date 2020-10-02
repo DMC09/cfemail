@@ -40,7 +40,7 @@ export default function MainForm() {
       uname,
       pword,
       isSubscribing
-    });
+    }).then(result=>console.log(result));
   };
   return (
     <form noValidate onSubmit={handleSubmit(onSubmit)} className="form_container">
