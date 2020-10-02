@@ -21,7 +21,7 @@ app.use(cors())
 // base route
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
-console.log('this is the base route')
+// console.log('this is the base route')
 })
 
 // post route
