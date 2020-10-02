@@ -4,8 +4,6 @@
     "/**": "index.html"
   },
   "proxies": {
-     {
-      "origin": "https://sana-beta.herokuapp.com/"
-    }
+      "/": "https://sana-beta.herokuapp.com/"
   }
 }
