@@ -7,7 +7,7 @@ const path = require('path')
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const nodemailer = require("nodemailer");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 const fs = require('fs');
 
 // gen setup | middleware

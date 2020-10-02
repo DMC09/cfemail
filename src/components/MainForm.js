@@ -29,11 +29,11 @@ export default function MainForm() {
   };
   const onSubmit = async (data) => {
     // console.log(data)
-    const { isSubscribing,uname,pword } = await data;
+    const { isSubscribing,uname,pword } = await data; 
     await setUname(uname);
     await setPword(pword);
     await setSubscribe(isSubscribing);
-    await axios.post("http://localhost:5000/post", {
+    await axios.post("http://localhost:8080/post", {
       fname,
       lname,
       email,
