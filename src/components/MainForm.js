@@ -33,7 +33,7 @@ export default function MainForm() {
     await setUname(uname);
     await setPword(pword);
     await setSubscribe(isSubscribing);
-    await axios.post("http://localhost/post", {
+    await axios.post("https://sana-beta.herokuapp.com/post", {
       fname,
       lname,
       email,
