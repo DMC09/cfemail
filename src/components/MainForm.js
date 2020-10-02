@@ -33,7 +33,7 @@ export default function MainForm() {
     await setUname(uname);
     await setPword(pword);
     await setSubscribe(isSubscribing);
-    await axios.post("http://localhost:3001/post", {
+    await axios.post("http://localhost:8080/post", {
       fname,
       lname,
       email,

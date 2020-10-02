@@ -2,22 +2,24 @@
 // imports
 const express = require('express')
 const cors = require('cors')
+const path = require('path')
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const nodemailer = require("nodemailer");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 const fs = require('fs');
 
 // gen setup | middleware
 const app = express()
 dotenv.config();
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json())
 app.use(cors())
 
 // base route
 app.get('/', (req, res) => {
-res.send('this is the base route')
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 console.log('this is the base route')
 })
 
