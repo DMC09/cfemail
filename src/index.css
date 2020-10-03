@@ -1,3 +1,4 @@
+@import "./stylesheets/formStyles.css";
 @import "./stylesheets/utility.css";
 @import "./stylesheets/generic.css";
 @import "./stylesheets/reset.css";
@@ -66,123 +67,22 @@ form fieldset {
   top: 1px;
 }
 
-/* form starting stylings ------------------------------- */
-.group {
-  position: relative;
-  margin-bottom: 30px;
-}
+.newsletter_group{
+padding: 1rem 0.5rem;
 
-input {
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  color: var(--tertiary-color);
-  width: 300px;
-  border: none;
-  border-bottom: 1px solid var(--tertiary-color);
-  
-}
-input:focus {
-  outline: none;
-}
-
-/* LABEL ======================================= */
-label {
-  color: var(--tertiary-color);
-  font-size: 18px;
-  font-weight: normal;
-  display: block;
-  margin: 0 auto;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-/* active state */
-input:focus ~ label,
-input:valid ~ label {
-  top: -20px;
-  font-size: 14px;
-  color: var(--tertiary-color);
-}
-
-/* BOTTOM BARS ================================= */
-.bar {
-  position: relative;
-  display: block;
-}
-.bar:before,
-.bar:after {
-  content: "";
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: var(--secondary-color);
-  transition: 0.2s ease-in-out all;
-  -moz-transition: 0.2s ease-in-out all;
-  -webkit-transition: 0.2s ease-in-out all;
-}
-.bar:before {
-  left: 50%;
-}
-.bar:after {
-  right: 50%;
-}
-
-/* active state */
-input:focus ~ .bar:before,
-input:focus ~ .bar:after {
   width: 50%;
 }
 
-/* HIGHLIGHTER ================================== */
-.highlight {
-  position: absolute;
-  height: 60%;
-  width: 100px;
-  top: 25%;
-  left: 0;
-  pointer-events: none;
-  opacity: 0.5;
+.newsletter{
+  display: flex;
+flex-flow: column;
+  justify-content: space-around;
+  align-items: end;
+height: 75px;
+
 }
 
-/* active state */
-input:focus ~ .highlight {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  -moz-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
-}
+.radio_group{
+  display: flex;
 
-/* ANIMATIONS ================ */
-@-webkit-keyframes inputHighlighter {
-  from {
-    background: #5264ae;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-@-moz-keyframes inputHighlighter {
-  from {
-    background: #5264ae;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-@keyframes inputHighlighter {
-  from {
-    background: #5264ae;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
 }

@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { FormContext } from "../context/formContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
-const eye = <FontAwesomeIcon icon={faEye} />;
+const eye = <FontAwesomeIcon style={{ marginTop: "1rem" }} icon={faEye} />;
 
 export default function MainForm() {
   const [
@@ -150,45 +150,59 @@ export default function MainForm() {
             </span>
           )}
         </div>
-        <div className="sub_group">
-          <p style={{ color: "#E0E0E0", fontSize: 18 }}>
-            Subscribe to Newsletter?
+        <div className="group newsletter_group">
+          <p style={{ color: "#E0E0E0", fontSize: 20,textAlign:"left",marginBottom:'1rem' }}>
+            Subscribe to our monthly newsletter?
           </p>
           <div className="newsletter">
+          <div className="radio_group">
+          <input
+          style={{
+            width: "initial",
+            display: "inline-block"
+          }}
+          type="radio"
+          name="isSubscribing"
+          value="true"
+          ref={register}
+          />
             <label
               style={{
                 position: "initial",
+                display: "inline-block",
                 color: "#E0E0E0",
                 fontSize: 18,
                 top: 20,
                 left: 30,
               }}
             >
-              Yes
+              Sure!
             </label>
+            </div>
+            <div className="radio_group">
             <input
-              type="radio"
-              name="isSubscribing"
-              value="true"
-              ref={register}
+            style={{
+              width: "initial",
+              display: "inline-block"
+            }}
+            type="radio"
+            name="isSubscribing"
+            value="false"
+            ref={register}
             />
             <label
               style={{
                 position: "initial",
                 color: "#E0E0E0",
+                display: "inline-block",
                 fontSize: 18,
                 top: 20,
                 left: 30,
               }}
             >
-              No
+              No thanks!
             </label>
-            <input
-              type="radio"
-              name="isSubscribing"
-              value="false"
-              ref={register}
-            />
+            </div>
           </div>
         </div>
         <button className="myButton" type="submit" name="action">
