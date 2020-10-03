@@ -23,7 +23,7 @@ export default function MainForm() {
   ] = useContext(FormContext);
   const [passwordShown, setPasswordShown] = useState(false);
   const { register, handleSubmit, errors } = useForm();
-  const url = "/post";
+  const url = "https://sanabackend.herokuapp.com/post";
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };
