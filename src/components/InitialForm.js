@@ -3,24 +3,25 @@ import { useForm } from "react-hook-form";
 import { FormContext } from "../context/formContext";
 
 export default function InitialForm() {
+
   const [
-    fname,
-    setFname,
-    lname,
-    setLname,
-    email,
-    setEmail,
-    completedInit,
-    setComplete,
+    stage,setStage,
+    fname, setFname,
+    lname, setLname,
+    email,setEmail,
+    uname, setUname,
+    pword, setPword,
+    subscribed,setSubscribe,
   ] = useContext(FormContext);
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async (data) => {
+
     const { fname, lname, email } = await data;
     await setFname(fname.replace(/\b(\w)/g, (s) => s.toUpperCase()));
     await setLname(lname.replace(/\b(\w)/g, (s) => s.toUpperCase()));
     await setEmail(email);
-    await setComplete(true);
-    console.log(fname,lname,email)
+    await setStage('main');
+    console.log(fname,lname,email);
   };
   return (
     <form
@@ -29,7 +30,7 @@ export default function InitialForm() {
       onSubmit={handleSubmit(onSubmit)}
     >
       <fieldset>
-        <h1 className="form_status" style={{ textAlign: "center" }}>Sana beta signup form!</h1>
+        <h1 className="form_status" style={{ textAlign: "center" }}>Beta request form</h1>
           <div id="firstName" className=" group">
             <input
               id="first_name"

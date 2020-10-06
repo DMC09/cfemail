@@ -8,19 +8,14 @@ const eye = <FontAwesomeIcon style={{ marginTop: "1rem" }} icon={faEye} />;
 
 export default function MainForm() {
   const [
-    fname,
-    setFname,
-    lname,
-    setLname,
-    email,
-    setEmail,
-    uname,
-    setUname,
-    pword,
-    setPword,
-    subscribed,
-    setSubscribe,
-  ] = useContext(FormContext);
+    stage,setStage,
+    fname, setFname,
+    lname, setLname,
+    email,setEmail,
+    uname, setUname,
+    pword, setPword,
+    subscribed,setSubscribe,
+] = useContext(FormContext);
   const [passwordShown, setPasswordShown] = useState(false);
   const { register, handleSubmit, errors } = useForm();
   const url = "https://sanabackend.herokuapp.com/post";
@@ -28,12 +23,11 @@ export default function MainForm() {
     setPasswordShown(passwordShown ? false : true);
   };
   const onSubmit = async (data) => {
-    // console.log(data)
-    const { isSubscribing, uname, pword } = await data;
-    await setUname(uname);
-    await setPword(pword);
-    await setSubscribe(isSubscribing);
-    await axios
+  const { uname, pword, isSubscribing } = await data;
+  await setUname(uname);
+  await setPword(pword);
+  await setSubscribe(isSubscribing);
+  await axios
       .post(url, {
         fname,
         lname,
@@ -45,9 +39,11 @@ export default function MainForm() {
       .then(
         (response) => {
           console.log(response);
+            setStage('success')
         },
         (error) => {
           console.log(error);
+          setStage('failure')
         }
       );
   };

@@ -9,17 +9,19 @@ export const FormProvider = (props) => {
   const [uname, setUname] = useState("");
   const [pword, setPword] = useState("");
   const [subscribed, setSubscribe] = useState(null);
-  const [completedInit,setComplete] = useState(null)
+  const [stage,setStage] = useState('initial')
 
   return (
     <FormContext.Provider
-      value={[completedInit,setComplete,
+      value={[
+        stage,setStage,
         fname, setFname,
         lname, setLname,
         email,setEmail,
         uname, setUname,
         pword, setPword,
-        subscribed,setSubscribe]}>
+        subscribed,setSubscribe,
+    ]}>
       {props.children}
     </FormContext.Provider>
   );
