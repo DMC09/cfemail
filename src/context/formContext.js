@@ -10,6 +10,7 @@ export const FormProvider = (props) => {
   const [pword, setPword] = useState("");
   const [subscribed, setSubscribe] = useState(null);
   const [stage,setStage] = useState('initial')
+  const [loader,setLoder] = useState('button')
 
   return (
     <FormContext.Provider
@@ -21,6 +22,7 @@ export const FormProvider = (props) => {
         uname, setUname,
         pword, setPword,
         subscribed,setSubscribe,
+        loader,setLoder
     ]}>
       {props.children}
     </FormContext.Provider>

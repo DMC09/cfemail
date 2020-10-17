@@ -7,6 +7,14 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 const eye = <FontAwesomeIcon style={{ marginTop: "1rem" }} icon={faEye} />;
 
 export default function MainForm() {
+  const ani =
+  <div class="load-wrapp">
+   <div class="load-3">
+     <div class="loader-line"></div>
+     <div class="loader-line"></div>
+     <div class="loader-line"></div>
+   </div>
+ </div>
   const [
     stage,setStage,
     fname, setFname,
@@ -15,6 +23,7 @@ export default function MainForm() {
     uname, setUname,
     pword, setPword,
     subscribed,setSubscribe,
+    loader,setLoder
 ] = useContext(FormContext);
   const [passwordShown, setPasswordShown] = useState(false);
   const { register, handleSubmit, errors } = useForm();
@@ -23,6 +32,7 @@ export default function MainForm() {
     setPasswordShown(passwordShown ? false : true);
   };
   const onSubmit = async (data) => {
+  setLoder(ani)
   const { uname, pword, isSubscribing } = await data;
   await setUname(uname);
   await setPword(pword);
@@ -201,8 +211,9 @@ export default function MainForm() {
             </div>
           </div>
         </div>
+
         <button className="myButton" type="submit" name="action">
-          Confirm
+            {loader}
         </button>
       </fieldset>
     </form>

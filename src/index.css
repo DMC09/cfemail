@@ -15,7 +15,7 @@
   color: var(--secondary-color);
 }
 form {
-  padding: 1rem ;
+  padding: 1rem;
   width: 500px;
   display: flex;
   justify-content: center;
@@ -35,8 +35,8 @@ form fieldset {
   margin: 0 auto;
   display: block;
   margin-bottom: 2.5rem;
-  height:150px;
-  width:150px;
+  height: 150px;
+  width: 150px;
 }
 /* rows */
 
@@ -69,40 +69,79 @@ form fieldset {
   top: 1px;
 }
 
-.newsletter_group{
-padding: 1rem 0rem;
-
-
+.newsletter_group {
+  padding: 1rem 0rem;
 }
 
-.newsletter{
+.newsletter {
   display: flex;
-flex-flow: column;
+  flex-flow: column;
   justify-content: space-around;
   align-items: end;
-height: 75px;
-
+  height: 75px;
 }
 
-.radio_group{
+.radio_group {
   display: flex;
-
 }
 
-.success{
+.success {
   font-size: 1.5rem;
   text-align: center;
   color: var(--secondary-color);
 }
-.sub-success{
+.sub-success {
   font-size: 1rem;
   margin-top: 1rem;
-font-style: italic;
+  font-style: italic;
   text-align: center;
-  color: var(--tertiary-color)
+  color: var(--tertiary-color);
 }
-.failure{
+.failure {
   font-size: 1.5rem;
   text-align: center;
   color: red;
+}
+
+/* ANIMATION */
+.load-wrapp {
+  text-align: center;
+  background-color: #ee992b;
+  padding-bottom: 0.5rem;
+}
+.load-3 {
+  background-color: #ee992b;
+}
+
+.loader-line {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: var(--main-color);
+}
+
+/* =Animate the stuff
+------------------------ */
+
+.load-3 .loader-line:nth-last-child(1) {
+  animation: loadingC 0.6s 0.1s linear infinite;
+}
+.load-3 .loader-line:nth-last-child(2) {
+  animation: loadingC 0.6s 0.2s linear infinite;
+}
+.load-3 .loader-line:nth-last-child(3) {
+  animation: loadingC 0.6s 0.3s linear infinite;
+}
+
+@keyframes loadingC {
+  0 {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

@@ -30,6 +30,7 @@ export default function InitialForm() {
       onSubmit={handleSubmit(onSubmit)}
     >
       <fieldset>
+  
         <h1 className="form_status" style={{ textAlign: "center" }}>Beta request form</h1>
           <div id="firstName" className=" group">
             <input

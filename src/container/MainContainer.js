@@ -6,11 +6,7 @@ import SuccessPage from "../components/SuccessPage";
 import FailurePage from "../components/FailurePage";
 
 const MainContainer = () => {
-  const [
-    stage,setStage,
-
-
-] = useContext(FormContext);
+  const [stage,setStage,] = useContext(FormContext);
 
   return (
     <>
