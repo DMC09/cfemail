@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { FormContext } from "../context/formContext";
 
 export default function InitialForm() {
-
   const [
     stage,setStage,
     fname, setFname,
@@ -15,22 +14,19 @@ export default function InitialForm() {
   ] = useContext(FormContext);
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async (data) => {
-
-    const { fname, lname, email } = await data;
-    await setFname(fname.replace(/\b(\w)/g, (s) => s.toUpperCase()));
-    await setLname(lname.replace(/\b(\w)/g, (s) => s.toUpperCase()));
-    await setEmail(email);
-    await setStage('main');
-    console.log(fname,lname,email);
+  const { fname, lname, email } = await data;
+  await setFname(fname.replace(/\b(\w)/g, (s) => s.toUpperCase()));
+  await setLname(lname.replace(/\b(\w)/g, (s) => s.toUpperCase()));
+  await setEmail(email);
+  await setStage('main');
+  console.log(fname,lname,email);
   };
   return (
     <form
       noValidate
       className="form_container"
-      onSubmit={handleSubmit(onSubmit)}
-    >
+      onSubmit={handleSubmit(onSubmit)}>
       <fieldset>
-  
         <h1 className="form_status" style={{ textAlign: "center" }}>Beta request form</h1>
           <div id="firstName" className=" group">
             <input
@@ -43,8 +39,8 @@ export default function InitialForm() {
                 required: true,
                 minLength: 1,
                 pattern: /^[a-zA-z]+$/,
-              })}
-            ></input>
+              })}>
+            </input>
             <span className="highlight"></span>
             <span className="bar"></span>
             <label>First Name</label>
@@ -52,8 +48,7 @@ export default function InitialForm() {
               <span
                 className="helper-text"
                 data-error="wrong"
-                data-success="right"
-              >
+                data-success="right">
                 Your input is required
               </span>
             )}
@@ -61,8 +56,7 @@ export default function InitialForm() {
               <span
                 className="helper-text"
                 data-error="wrong"
-                data-success="right"
-              >
+                data-success="right">
                 Your input needs to be at least 1 letter
               </span>
             )}
@@ -70,8 +64,7 @@ export default function InitialForm() {
               <span
                 className="helper-text"
                 data-error="wrong"
-                data-success="right"
-              >
+                data-success="right">
                 please only use letters
               </span>
             )}
@@ -87,8 +80,7 @@ export default function InitialForm() {
                 required: true,
                 minLength: 1,
                 pattern: /^[a-zA-z]+$/,
-              })}
-            ></input>
+              })}></input>
             <span className="highlight"></span>
             <span className="bar"></span>
             <label>Last Name</label>
