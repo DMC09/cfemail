@@ -10,7 +10,7 @@ export const FormProvider = (props) => {
   const [pword, setPword] = useState("");
   const [subscribed, setSubscribe] = useState(null);
   const [stage,setStage] = useState('initial')
-  const [loader,setLoder] = useState('button')
+  const [loader,setLoder] = useState('submit')
 
   return (
     <FormContext.Provider
