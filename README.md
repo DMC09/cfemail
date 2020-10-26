@@ -1,5 +1,5 @@
 ## Sana Beta
-a full-stack web app used to promote a new music streaming beta software.
+A full-stack web app used to promote a new music streaming beta software.
 [Live](https://sana-beta.netlify.app)
 
 ## Screenshots
