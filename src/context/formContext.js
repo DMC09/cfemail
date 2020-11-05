@@ -9,7 +9,7 @@ export const FormProvider = (props) => {
   const [uname, setUname] = useState("");
   const [pword, setPword] = useState("");
   const [subscribed, setSubscribe] = useState(null);
-  const [stage,setStage] = useState('initial')
+  const [stage,setStage] = useState('main')
   const [loader,setLoder] = useState('submit')
 
   return (

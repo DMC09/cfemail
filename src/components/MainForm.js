@@ -125,7 +125,7 @@ export default function MainForm() {
           <span className="highlight"></span>
           <span className="bar"></span>
           <label>Password</label>
-          <i style={{ color: "#E0E0E0" }} onClick={togglePasswordVisiblity}>
+          <i className="p_icon"  onClick={togglePasswordVisiblity}>
             {eye}
           </i>
           {errors.pword?.type === "required" && (

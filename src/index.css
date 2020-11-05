@@ -73,6 +73,13 @@ form fieldset {
   padding: 1rem 0rem;
 }
 
+.p_icon{
+ color:#E0E0E0;
+ position: absolute;
+ right:0;
+ top:-10%;
+}
+
 .newsletter {
   display: flex;
   flex-flow: column;
