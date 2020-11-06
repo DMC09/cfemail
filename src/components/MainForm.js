@@ -88,7 +88,7 @@ export default function MainForm() {
               data-error="wrong"
               data-success="right"
             >
-              Your input is required
+              Username is required
             </span>
           )}
           {errors.uname?.type === "minLength" && (
@@ -97,7 +97,7 @@ export default function MainForm() {
               data-error="wrong"
               data-success="right"
             >
-              Your username must be at least 1 character
+              Username must be at least 1 character
             </span>
           )}
           {errors.uname?.type === "pattern" && (
@@ -106,7 +106,7 @@ export default function MainForm() {
               data-error="wrong"
               data-success="right"
             >
-              please use letters and numbers
+              Username must consist of letters and numbers
             </span>
           )}
         </div>
@@ -134,7 +134,7 @@ export default function MainForm() {
               data-error="wrong"
               data-success="right"
             >
-              Your input is required
+              Password is required
             </span>
           )}
           {errors.pword?.type === "minLength" && (
@@ -143,7 +143,7 @@ export default function MainForm() {
               data-error="wrong"
               data-success="right"
             >
-              Your password needs to be at least 1 character
+             Password must be at least 1 character
             </span>
           )}
           {errors.pword?.type === "pattern" && (
@@ -152,7 +152,7 @@ export default function MainForm() {
               data-error="wrong"
               data-success="right"
             >
-              please use Alphanumeric values
+              Password must use letters and numbers
             </span>
           )}
         </div>

@@ -49,7 +49,7 @@ export default function InitialForm() {
                 className="helper-text"
                 data-error="wrong"
                 data-success="right">
-                Your input is required
+                First name is required
               </span>
             )}
             {errors.fname?.type === "minLength" && (
@@ -57,7 +57,7 @@ export default function InitialForm() {
                 className="helper-text"
                 data-error="wrong"
                 data-success="right">
-                Your input needs to be at least 1 letter
+                First name must be at least 1 letter.
               </span>
             )}
             {errors.fname?.type === "pattern" && (
@@ -65,7 +65,7 @@ export default function InitialForm() {
                 className="helper-text"
                 data-error="wrong"
                 data-success="right">
-                please only use letters
+                please only use letters for First Name
               </span>
             )}
           </div>
@@ -90,7 +90,7 @@ export default function InitialForm() {
                 data-error="wrong"
                 data-success="right"
               >
-                Your input is required
+                      Last name is required
               </span>
             )}
             {errors.lname?.type === "minLength" && (
@@ -99,7 +99,7 @@ export default function InitialForm() {
                 data-error="wrong"
                 data-success="right"
               >
-                Your input needs to be at least 1 letter
+Last name must be at least 1 letter.
               </span>
             )}
             {errors.lname?.type === "pattern" && (
@@ -108,7 +108,8 @@ export default function InitialForm() {
                 data-error="wrong"
                 data-success="right"
               >
-                please only use letters
+              please only use letters for First Name
+
               </span>
             )}
           </div>
@@ -134,7 +135,7 @@ export default function InitialForm() {
                 data-error="wrong"
                 data-success="right"
               >
-                Your input is required
+                Email is required
               </span>
             )}
             {errors.email?.type === "minLength" && (
@@ -143,7 +144,7 @@ export default function InitialForm() {
                 data-error="wrong"
                 data-success="right"
               >
-                Your input needs to be at least 1 letter
+                Email must be at least 1 letter
               </span>
             )}
             {errors.email?.type === "pattern" && (
@@ -152,7 +153,7 @@ export default function InitialForm() {
                 data-error="wrong"
                 data-success="right"
               >
-                Please enter a valid email address
+                Email must be valid
               </span>
             )}
           </div>
