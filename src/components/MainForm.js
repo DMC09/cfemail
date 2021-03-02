@@ -170,6 +170,7 @@ export default function MainForm() {
           type="radio"
           name="isSubscribing"
           value="true"
+          required
           ref={register}
           />
             <label
@@ -194,6 +195,7 @@ export default function MainForm() {
             type="radio"
             name="isSubscribing"
             value="false"
+            required
             ref={register}
             />
             <label

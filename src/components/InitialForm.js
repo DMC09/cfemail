@@ -75,6 +75,8 @@ export default function InitialForm() {
               type="text"
               className="validate"
               name="lname"
+
+
               required
               ref={register({
                 required: true,
@@ -159,7 +161,7 @@ Last name must be at least 1 letter.
           </div>
         </div>
 
-        <button className="myButton" type="submit" name="action">
+        <button className="myButton"  type="submit" name="action">
           Next
         </button>
       </fieldset>

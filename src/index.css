@@ -152,3 +152,7 @@ form fieldset {
     transform: translate(0, 0);
   }
 }
+::root {
+
+  all: initial;
+}
