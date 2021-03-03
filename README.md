@@ -3,13 +3,12 @@ A full-stack web app to promote an early beta for new streaming platform.
 <br /> [Live](https://sana-beta.netlify.app)
 
 
-<b>Built with</b>
-
-- HTML
-- CSS
-- React.JS
-- Express.JS
-- Node.JS
+## Tech stack
+* HTML
+* CSS
+* React.JS  
+* Node.JS  
+* Express.JS
 
 
 ## Screenshots
